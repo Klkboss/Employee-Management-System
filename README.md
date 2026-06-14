@@ -1,26 +1,113 @@
-# Employee Management Portal
+# Employee Management System
 
-A full-stack Employee Management application featuring a secure **Python Pyramid** backend API and a modern **React** frontend dashboard. It supports full CRUD (Create, Read, Update, Delete) operations on employees, secure JWT-based user authentication, and persistent data storage in a **MySQL** database.
+A full-stack Employee Management System developed during my internship in **June 2025**, featuring a secure **Python Pyramid** backend API and a modern **React** frontend dashboard.
+
+The application enables secure employee record management through JWT-based authentication, user-specific data isolation, and complete CRUD (Create, Read, Update, Delete) operations backed by a MySQL database.
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## 💼 Internship Project
 
-This project utilizes a decoupled client-server architecture:
+This project was developed as part of my internship experience in June 2025.
 
-### Backend API
-- **Framework**: [Pyramid](https://trypyramid.com/) (Python)
-- **Database ORM/Connector**: [SQLAlchemy](https://www.sqlalchemy.org/) & [PyMySQL](https://github.com/PyMySQL/PyMySQL)
-- **WSGI Server**: [Waitress](https://docs.pylonsproject.org/projects/waitress/)
-- **Authentication**: JWT (JSON Web Tokens) with a custom auth tween (middleware)
-- **Hashing**: Passlib (`custom_app_context`)
+### Key Learning Outcomes
 
-### Frontend Dashboard
-- **Library**: [React](https://react.dev/) (v19)
-- **Styling**: [Bootstrap 5](https://getbootstrap.com/) via [React-Bootstrap](https://react-bootstrap.github.io/)
-- **Routing**: [React Router](https://reactrouter.com/) (v7)
-- **Icons**: React Icons
-- **HTTP Client**: Axios (configured with interceptors to attach the JWT authorization headers)
+* Full-stack application development
+* REST API design and implementation
+* JWT Authentication and Authorization
+* Database schema design with SQLAlchemy
+* React frontend integration
+* Client-server architecture
+* User-specific data access control
+* Secure CRUD operations
+* API testing and debugging
+
+---
+
+## ✨ Features
+
+### Authentication & Security
+
+* User Registration
+* User Login & Logout
+* JWT-Based Authentication
+* Protected API Endpoints
+* Password Hashing using Passlib
+* User-Specific Employee Data Isolation
+
+### Employee Management
+
+* Create Employee Records
+* View Employee Details
+* Update Employee Information
+* Delete Employee Records
+* Employee Search and Management
+
+### Dashboard Experience
+
+* Responsive User Interface
+* Sidebar Navigation
+* Top Navigation Bar
+* Bootstrap Modals
+* Protected Routes
+* Real-Time Employee Updates
+
+### Database Management
+
+* MySQL Database Integration
+* SQLAlchemy ORM Models
+* Transaction Management
+* Persistent Data Storage
+
+---
+
+## 🏗️ System Architecture
+
+```text
+React Frontend
+      │
+      ▼
+Axios API Client
+      │
+      ▼
+Pyramid REST API
+      │
+      ▼
+JWT Authentication Middleware
+      │
+      ▼
+SQLAlchemy ORM
+      │
+      ▼
+MySQL Database
+```
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend
+
+* Python
+* Pyramid Framework
+* SQLAlchemy
+* PyMySQL
+* Waitress WSGI Server
+* JWT Authentication
+* Passlib
+
+### Frontend
+
+* React
+* React Router
+* Axios
+* Bootstrap 5
+* React Bootstrap
+* React Icons
+
+### Database
+
+* MySQL
 
 ---
 
@@ -29,123 +116,248 @@ This project utilizes a decoupled client-server architecture:
 ```text
 employee_api/
 │
-├── employee_api/             # Backend Python package
-│   ├── __init__.py           # Application config, routes registration, CORS settings
-│   ├── models.py             # SQLAlchemy DB schemas (User, Employee)
-│   ├── views.py              # API view endpoints (login, register, CRUD)
+├── employee_api/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── views.py
 │   └── middleware/
-│       └── auth.py           # JWT Authentication tween (middleware)
+│       └── auth.py
 │
-├── employee-portal/          # Frontend React Application
-│   ├── public/               # Public assets
+├── employee-portal/
+│   ├── public/
 │   ├── src/
-│   │   ├── components/       # Reusable components (AddEmployeeModal, Sidebar, ProtectedRoute, etc.)
-│   │   ├── pages/            # View pages (Register, Employee Dashboard)
-│   │   ├── api.js            # Axios client setup with JWT auth interceptors
-│   │   ├── App.js            # Frontend routing config
-│   │   └── index.js          # React entrypoint
-│   └── .env                  # Frontend environment variables
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── api.js
+│   │   ├── App.js
+│   │   └── index.js
+│   │
+│   └── package.json
 │
-├── development.ini           # Pyramid backend environment configuration
-├── initialize_db.py          # Database/tables creation script
-├── requirements.txt          # Python dependencies
-└── setup.py                  # Python package configuration
+├── development.ini
+├── initialize_db.py
+├── requirements.txt
+└── setup.py
+```
+
+---
+## 📚 Documentation
+
+Detailed project documentation is available in the repository:
+
+* docs/Employee_Management_System_Documentation.pdf
+
+The document includes:
+
+* System Architecture
+* Database Design
+* API Endpoints
+* Authentication Flow
+* Frontend Architecture
+* Development Process
+* Implementation Details
+
+
+## 🚀 Setup & Installation
+
+### Prerequisites
+
+Make sure the following are installed:
+
+* Python 3.x
+* Node.js (v18+)
+* npm
+* MySQL Server
+
+---
+
+### Step 1: Clone Repository
+
+```bash
+git clone https://github.com/Klkboss/Employee-Management-System.git
+cd Employee-Management-System
 ```
 
 ---
 
-## 🛠️ Prerequisites
+### Step 2: Configure Database
 
-Before running this application, ensure you have the following installed on your machine:
-- **Python 3.x**
-- **Node.js** (v18+) & **npm**
-- **MySQL Database Server** (running locally)
+Create a MySQL database:
 
----
+```sql
+CREATE DATABASE employee_db5;
+```
 
-## 🚀 Setup & Installation
+Update database credentials in:
 
-Follow these steps to get the full-stack application running locally:
-
-### 1. Database Configuration & Initialization
-
-1. Start your local MySQL database.
-2. The application uses a database named `employee_db5` and connects with standard local credentials (`root`/`tiger`). To change these credentials, update them in:
-   - [development.ini](file:///c:/Users/kusha/Downloads/jeff1dd/employee_api/employee_api4/employee_api/development.ini#L3)
-   - [initialize_db.py](file:///c:/Users/kusha/Downloads/jeff1dd/employee_api/employee_api4/employee_api/initialize_db.py#L3-L10)
-   - [employee_api/views.py](file:///c:/Users/kusha/Downloads/jeff1dd/employee_api/employee_api4/employee_api/employee_api/views.py#L14-L23)
-3. Run the database initialization script to create the database schema:
-   ```bash
-   python initialize_db.py
-   ```
-
-### 2. Backend Setup
-
-1. Navigate to the root directory of the project.
-2. Create and activate a virtual environment:
-   ```bash
-   # Create a virtual environment
-   python -m venv venv
-
-   # Activate it (Windows)
-   venv\Scripts\activate
-
-   # Activate it (macOS/Linux)
-   source venv/bin/activate
-   ```
-3. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   pip install -e .
-   ```
-4. Start the backend development server using Waitress:
-   ```bash
-   pserve development.ini
-   ```
-   The API will be available at `http://localhost:6543`.
-
-### 3. Frontend Setup
-
-1. Open a new terminal and navigate to the frontend directory:
-   ```bash
-   cd employee-portal
-   ```
-2. Check the `.env` configuration file to ensure it points to the correct API base URL:
-   ```env
-   REACT_APP_API_BASE_URL=http://localhost:6543
-   ```
-3. Install client dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the frontend React development server:
-   ```bash
-   npm start
-   ```
-   The portal dashboard will launch in your default web browser at `http://localhost:3000`.
+* development.ini
+* initialize_db.py
+* employee_api/views.py
 
 ---
 
-## 🔑 REST API Endpoints
+### Step 3: Initialize Database
 
-All endpoints are prefixed with `/api`. Protected routes require the `Authorization` header in the format: `Authorization: JWT <token>`.
-
-| Route | Method | Authentication | Description |
-| :--- | :---: | :---: | :--- |
-| `/api/register` | `POST` | Public | Register a new administrator user. |
-| `/api/login` | `POST` | Public | Authenticate a user and return a JWT token. |
-| `/api/logout` | `POST` | Public | Log out. |
-| `/api/employees` | `GET` | Authenticated | List all employees belonging to the logged-in user. |
-| `/api/employees` | `POST` | Authenticated | Create a new employee entry. |
-| `/api/employees/{id}` | `PATCH` | Authenticated | Update fields (`name`, `position`, `salary`, `department`) of an employee. |
-| `/api/employees/{id}` | `DELETE` | Authenticated | Remove an employee. |
+```bash
+python initialize_db.py
+```
 
 ---
 
-## ✨ Features
+### Step 4: Backend Setup
 
-- **JWT Authentication Flow**: Users must register and log in to manage records. The token expires in 5 minutes (configurable in `development.ini`).
-- **Complete CRUD Operations**: Add, edit, list, and delete employees dynamically.
-- **Role Isolation**: Users can only view, edit, or delete employees they created (based on the logged-in user's ID).
-- **Responsive Dashboard**: Beautiful Sidebar navigation, Top Navbar with profile and logout status, and Bootstrap Modals for data entry.
-- **Robust Database Consistency**: Queries use direct MySQL connections with `READ COMMITTED` isolation level for transaction isolation and immediate consistency.
+Create and activate virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+```
+
+Run backend server:
+
+```bash
+pserve development.ini
+```
+
+Backend runs at:
+
+```text
+http://localhost:6543
+```
+
+---
+
+### Step 5: Frontend Setup
+
+Navigate to frontend:
+
+```bash
+cd employee-portal
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create .env file:
+
+```env
+REACT_APP_API_BASE_URL=http://localhost:6543
+```
+
+Start React application:
+
+```bash
+npm start
+```
+
+Frontend runs at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🔑 API Endpoints
+
+| Endpoint            | Method | Description        |
+| ------------------- | ------ | ------------------ |
+| /api/register       | POST   | Register new user  |
+| /api/login          | POST   | Authenticate user  |
+| /api/logout         | POST   | Logout user        |
+| /api/employees      | GET    | Retrieve employees |
+| /api/employees      | POST   | Create employee    |
+| /api/employees/{id} | PATCH  | Update employee    |
+| /api/employees/{id} | DELETE | Delete employee    |
+
+---
+
+## 🔒 Authentication Flow
+
+1. User registers an account.
+2. User logs in with credentials.
+3. Server generates a JWT token.
+4. Frontend stores token securely.
+5. Axios interceptor attaches token to requests.
+6. Pyramid middleware validates token.
+7. Protected endpoints return user-specific data.
+
+---
+
+## 📊 Database Models
+
+### User
+
+* id
+* username
+* password_hash
+
+### Employee
+
+* id
+* name
+* department
+* position
+* salary
+* user_id
+
+---
+
+## 🎯 Project Highlights
+
+* Developed during Internship (June 2025)
+* Full-Stack Application
+* Secure JWT Authentication
+* RESTful API Design
+* MySQL Database Integration
+* React Dashboard Interface
+* Role-Based Data Isolation
+* Production-Style Architecture
+
+---
+
+## 🔮 Future Enhancements
+
+* Role-Based Access Control (RBAC)
+* Employee Profile Photos
+* Attendance Management
+* Payroll Management
+* Performance Analytics Dashboard
+* Email Notifications
+* Docker Deployment
+* Cloud Hosting
+
+---
+
+## 👨‍💻 Author
+
+**Kushagra Chauhan**
+
+B.Tech Computer Science Engineering
+
+---
+
+## 📄 License
+
+This project is intended for educational, internship, and portfolio purposes.
