@@ -1,26 +1,30 @@
 # Employee Management System
 
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Internship Project](https://img.shields.io/badge/Internship-June%202025-blue)
+![Python](https://img.shields.io/badge/Python-Pyramid-yellow)
+![React](https://img.shields.io/badge/Frontend-React-blue)
+
 A full-stack Employee Management System developed during my internship in **June 2025**, featuring a secure **Python Pyramid** backend API and a modern **React** frontend dashboard.
 
 The application enables secure employee record management through JWT-based authentication, user-specific data isolation, and complete CRUD (Create, Read, Update, Delete) operations backed by a MySQL database.
 
 ---
 
-## 💼 Internship Project
+## 💼 Internship Experience
 
-This project was developed as part of my internship experience in June 2025.
+This Employee Management System was developed during my tenure as a **Software Development Intern at Subtle Labs (June 2025 – July 2025)**. The project provided hands-on experience in designing and implementing full-stack applications using Python, Pyramid, React, JWT authentication, and MySQL.
 
 ### Key Learning Outcomes
 
 * Full-stack application development
 * REST API design and implementation
-* JWT Authentication and Authorization
-* Database schema design with SQLAlchemy
-* React frontend integration
-* Client-server architecture
-* User-specific data access control
-* Secure CRUD operations
-* API testing and debugging
+* Authentication and authorization mechanisms
+* Database design and integration
+* Frontend-backend communication
+* Software engineering best practices
+* Debugging and testing workflows
+
 
 ---
 
@@ -116,6 +120,9 @@ MySQL Database
 ```text
 employee_api/
 │
+├── docs/
+│   └── Employee_Management_System_Documentation.pdf
+│
 ├── employee_api/
 │   ├── __init__.py
 │   ├── models.py
@@ -141,13 +148,14 @@ employee_api/
 ```
 
 ---
+
 ## 📚 Documentation
 
 Detailed project documentation is available in the repository:
 
-* docs/Employee_Management_System_Documentation.pdf
+* [Employee Management System Documentation](docs/Employee_Management_System_Documentation.pdf)
 
-The document includes:
+The documentation includes:
 
 * System Architecture
 * Database Design
@@ -157,6 +165,7 @@ The document includes:
 * Development Process
 * Implementation Details
 
+---
 
 ## 🚀 Setup & Installation
 
@@ -190,9 +199,9 @@ CREATE DATABASE employee_db5;
 
 Update database credentials in:
 
-* development.ini
-* initialize_db.py
-* employee_api/views.py
+* `development.ini`
+* `initialize_db.py`
+* `employee_api/views.py`
 
 ---
 
@@ -206,7 +215,7 @@ python initialize_db.py
 
 ### Step 4: Backend Setup
 
-Create and activate virtual environment:
+Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
@@ -231,13 +240,13 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-Run backend server:
+Run the backend server:
 
 ```bash
 pserve development.ini
 ```
 
-Backend runs at:
+Backend URL:
 
 ```text
 http://localhost:6543
@@ -247,7 +256,7 @@ http://localhost:6543
 
 ### Step 5: Frontend Setup
 
-Navigate to frontend:
+Navigate to the frontend directory:
 
 ```bash
 cd employee-portal
@@ -259,19 +268,19 @@ Install dependencies:
 npm install
 ```
 
-Create .env file:
+Create a `.env` file:
 
 ```env
 REACT_APP_API_BASE_URL=http://localhost:6543
 ```
 
-Start React application:
+Start the React application:
 
 ```bash
 npm start
 ```
 
-Frontend runs at:
+Frontend URL:
 
 ```text
 http://localhost:3000
@@ -281,26 +290,26 @@ http://localhost:3000
 
 ## 🔑 API Endpoints
 
-| Endpoint            | Method | Description        |
-| ------------------- | ------ | ------------------ |
-| /api/register       | POST   | Register new user  |
-| /api/login          | POST   | Authenticate user  |
-| /api/logout         | POST   | Logout user        |
-| /api/employees      | GET    | Retrieve employees |
-| /api/employees      | POST   | Create employee    |
-| /api/employees/{id} | PATCH  | Update employee    |
-| /api/employees/{id} | DELETE | Delete employee    |
+| Endpoint              | Method | Description        |
+| --------------------- | ------ | ------------------ |
+| `/api/register`       | POST   | Register new user  |
+| `/api/login`          | POST   | Authenticate user  |
+| `/api/logout`         | POST   | Logout user        |
+| `/api/employees`      | GET    | Retrieve employees |
+| `/api/employees`      | POST   | Create employee    |
+| `/api/employees/{id}` | PATCH  | Update employee    |
+| `/api/employees/{id}` | DELETE | Delete employee    |
 
 ---
 
 ## 🔒 Authentication Flow
 
 1. User registers an account.
-2. User logs in with credentials.
+2. User logs in using credentials.
 3. Server generates a JWT token.
-4. Frontend stores token securely.
-5. Axios interceptor attaches token to requests.
-6. Pyramid middleware validates token.
+4. Frontend stores the token.
+5. Axios interceptor attaches the token to requests.
+6. Pyramid middleware validates the token.
 7. Protected endpoints return user-specific data.
 
 ---
@@ -327,13 +336,13 @@ http://localhost:3000
 ## 🎯 Project Highlights
 
 * Developed during Internship (June 2025)
-* Full-Stack Application
+* Full-Stack Application Development
 * Secure JWT Authentication
 * RESTful API Design
 * MySQL Database Integration
 * React Dashboard Interface
-* Role-Based Data Isolation
-* Production-Style Architecture
+* User-Specific Employee Data Isolation
+* Production-Style Client-Server Architecture
 
 ---
 
@@ -354,7 +363,8 @@ http://localhost:3000
 
 **Kushagra Chauhan**
 
-B.Tech Computer Science Engineering
+* B.Tech Computer Science Engineering
+* Full-Stack Development & Data Science Enthusiast
 
 ---
 
