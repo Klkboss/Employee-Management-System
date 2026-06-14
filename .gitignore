@@ -1,0 +1,26 @@
+# Python
+venv/
+env/
+__pycache__/
+*.pyc
+*.log
+*.sqlite
+*.db
+
+# Pyramid
+*.egg-info/
+
+# Environment Variables
+.env
+
+# React / Node
+node_modules/
+build/
+dist/
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db

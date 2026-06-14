@@ -1,0 +1,8 @@
+pyramid
+sqlalchemy
+waitress
+pymysql
+passlib
+pyjwt
+cryptography
+zope.sqlalchemy

@@ -1,0 +1,93 @@
+.sidebar-link {
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: white !important;
+}
+
+.sidebar-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+
+/* Amazon-style pagination */
+.amazon-pagination {
+  background: #fff;
+  border-top: 1px solid #eaeaea;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1050;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 32px;
+}
+
+.amazon-pagination .pagination {
+  margin-bottom: 0;
+}
+
+.amazon-pagination .page-link {
+  color: #232f3e;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+
+.amazon-pagination .page-item.active .page-link {
+  background: #C0C0C0;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+}
+
+.amazon-pagination .page-link:hover,
+.amazon-pagination .page-item:not(.active):not(.disabled) .page-link:focus {
+  color: #3E4247;
+  background: #f3f3f3;
+}
+
+.amazon-pagination .page-item.disabled .page-link {
+  color: #bbb;
+  background: transparent;
+}
+
+.amazon-pagination-info {
+  margin-left: 24px;
+  color: #232f3e;
+  font-size: 0.95rem;
+}
+
+.table thead {
+  background: #232f3e;
+  color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f3f3f3;
+}
